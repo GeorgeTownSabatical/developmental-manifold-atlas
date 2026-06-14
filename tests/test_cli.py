@@ -32,3 +32,15 @@ def test_standards_writes_standards_output():
     assert main(["standards"]) == 0
     standards = ROOT / "dashboards" / "standards.json"
     assert standards.exists()
+
+
+def test_backend_writes_backend_output():
+    assert main(["backend"]) == 0
+    backend = ROOT / "dashboards" / "backend.json"
+    assert backend.exists()
+
+
+def test_eligibility_writes_hypothesis_eligibility_output():
+    assert main(["eligibility"]) == 0
+    eligibility = ROOT / "dashboards" / "hypothesis_eligibility.json"
+    assert eligibility.exists()

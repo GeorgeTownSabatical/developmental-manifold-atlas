@@ -347,6 +347,96 @@ def standards_command(_: argparse.Namespace) -> int:
     return 0
 
 
+def backend_command(_: argparse.Namespace) -> int:
+    datasets = load_json(ROOT / "registry/datasets.json")
+    hypotheses = load_json(ROOT / "hypotheses/hypotheses.json")
+    measurements = load_json(ROOT / "data/demo/measurements.json")
+    readiness = load_json(ROOT / "registry/protocol_readiness.json")
+
+    command_surface = [
+        "validate",
+        "quality",
+        "standards",
+        "hypotheses",
+        "eligibility",
+        "backend",
+        "report",
+        "analyze",
+        "normalize",
+        "cite",
+        "register",
+    ]
+    workflow_surface = [
+        "schema validation",
+        "data quality scoring",
+        "protocol readiness export",
+        "hypothesis eligibility check",
+        "dashboard generation",
+        "pages deployment",
+    ]
+    package_surface = {
+        "python": "scaffolded",
+        "typescript": "scaffolded",
+        "r": "scaffolded",
+        "rust": "scaffolded",
+        "julia": "scaffolded",
+    }
+    payload = {
+        "phase": "Phase 3",
+        "focus": "Developer backend maturity",
+        "cli_command_count": len(command_surface),
+        "cli_commands": command_surface,
+        "workflow_count": len(workflow_surface),
+        "workflows": workflow_surface,
+        "package_surface": package_surface,
+        "dataset_count": len(datasets),
+        "hypothesis_count": len(hypotheses),
+        "measurement_count": len(measurements),
+        "protocol_count": len(readiness),
+        "backend_status": "active",
+        "next_capabilities": [
+            "hypothesis test runner",
+            "unit normalization utilities",
+            "sensitivity analysis generator",
+            "reproducible report export",
+            "package API stabilization"
+        ],
+    }
+    out = ROOT / "dashboards/backend.json"
+    out.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+    for key, value in payload.items():
+        if key in {"cli_commands", "workflows", "package_surface", "next_capabilities"}:
+            continue
+        print(f"{key}: {value}")
+    return 0
+
+
+def eligibility_command(_: argparse.Namespace) -> int:
+    hypotheses = load_json(ROOT / "hypotheses/hypotheses.json")
+    measurements = load_json(ROOT / "data/demo/measurements.json")
+    trait_ids = {measurement["trait_id"] for measurement in measurements}
+    records = []
+    for hypothesis in hypotheses:
+        required = set(hypothesis["required_variables"])
+        available = sorted(required & trait_ids)
+        missing = sorted(required - trait_ids)
+        records.append(
+            {
+                "hypothesis_id": hypothesis["hypothesis_id"],
+                "title": hypothesis["title"],
+                "evidence_grade": hypothesis["evidence_grade"],
+                "available_variables": available,
+                "missing_variables": missing,
+                "eligibility": "pilot-ready" if available else "not-ready",
+            }
+        )
+    out = ROOT / "dashboards/hypothesis_eligibility.json"
+    out.write_text(json.dumps({"records": records}, indent=2) + "\n", encoding="utf-8")
+    for record in records:
+        print(f"{record['hypothesis_id']}: {record['eligibility']} ({len(record['available_variables'])} available, {len(record['missing_variables'])} missing)")
+    return 0
+
+
 def report_command(_: argparse.Namespace) -> int:
     datasets = load_json(ROOT / "registry/datasets.json")
     hypotheses = load_json(ROOT / "hypotheses/hypotheses.json")
@@ -395,8 +485,33 @@ def report_command(_: argparse.Namespace) -> int:
 
     out = ROOT / "dashboards/summary.json"
     out.write_text(json.dumps(dashboard, indent=2) + "\n", encoding="utf-8")
+    write_markdown_report(dashboard)
     print(f"wrote {out.relative_to(ROOT)}")
     return 0
+
+
+def write_markdown_report(dashboard: dict[str, object]) -> None:
+    reports_dir = ROOT / "reports"
+    reports_dir.mkdir(exist_ok=True)
+    lines = [
+        "# Atlas Backend Report",
+        "",
+        "Generated from repository registries and dashboard JSON.",
+        "",
+        f"- Datasets: {dashboard['dataset_count']}",
+        f"- Hypotheses: {dashboard['hypothesis_count']}",
+        f"- Organisms: {dashboard['organism_count']}",
+        f"- Measurements: {dashboard['measurement_record_count']}",
+        "",
+        "## Evidence Grades",
+        "",
+    ]
+    for grade, count in sorted(dashboard["evidence_grades"].items()):
+        lines.append(f"- {grade}: {count}")
+    lines.extend(["", "## Measurement Quality", ""])
+    for grade, count in sorted(dashboard["quality_grades"].items()):
+        lines.append(f"- {grade}: {count}")
+    (reports_dir / "atlas_backend_report.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
 def analyze_command(_: argparse.Namespace) -> int:
@@ -445,6 +560,8 @@ def build_parser() -> argparse.ArgumentParser:
     sub.add_parser("report", help="generate dashboard-ready summary JSON").set_defaults(func=report_command)
     sub.add_parser("quality", help="generate data-quality dashboard JSON").set_defaults(func=quality_command)
     sub.add_parser("standards", help="generate measurement-standardization dashboard JSON").set_defaults(func=standards_command)
+    sub.add_parser("backend", help="generate developer-backend maturity dashboard JSON").set_defaults(func=backend_command)
+    sub.add_parser("eligibility", help="check registered hypothesis variable eligibility").set_defaults(func=eligibility_command)
     sub.add_parser("analyze", help="run pilot AGD-craniofacial analysis").set_defaults(func=analyze_command)
     sub.add_parser("cite", help="print dataset citation records").set_defaults(func=cite_command)
     sub.add_parser("hypotheses", help="list registered hypotheses and evidence grades").set_defaults(func=hypotheses_command)

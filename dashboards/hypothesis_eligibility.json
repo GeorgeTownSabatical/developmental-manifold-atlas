@@ -1,0 +1,89 @@
+{
+  "records": [
+    {
+      "hypothesis_id": "H-AGD-ALLOMETRY-001",
+      "title": "AGD allometric baseline",
+      "evidence_grade": "E0",
+      "available_variables": [
+        "AGD_AC",
+        "AGD_AS"
+      ],
+      "missing_variables": [
+        "body_length",
+        "body_mass",
+        "developmental_stage",
+        "sex",
+        "species"
+      ],
+      "eligibility": "pilot-ready"
+    },
+    {
+      "hypothesis_id": "H-AGD-FACE-001",
+      "title": "AGD residuals covary with craniofacial residuals",
+      "evidence_grade": "E1",
+      "available_variables": [
+        "AGD_AC",
+        "AGD_AS"
+      ],
+      "missing_variables": [
+        "age",
+        "body_mass",
+        "sex",
+        "skull_length",
+        "snout_length",
+        "species"
+      ],
+      "eligibility": "pilot-ready"
+    },
+    {
+      "hypothesis_id": "H-NEO-FERT-001",
+      "title": "Neonatal geometry and later fertility",
+      "evidence_grade": "E0",
+      "available_variables": [
+        "HEAD_CIRCUMFERENCE"
+      ],
+      "missing_variables": [
+        "BIRTH_WEIGHT",
+        "GESTATIONAL_AGE",
+        "NEONATAL_AGD",
+        "fertility_marker",
+        "puberty_timing"
+      ],
+      "eligibility": "pilot-ready"
+    },
+    {
+      "hypothesis_id": "H-DOMESTICATION-001",
+      "title": "Domestication developmental deformation",
+      "evidence_grade": "E0",
+      "available_variables": [],
+      "missing_variables": [
+        "AGD",
+        "breed_strain",
+        "craniofacial_morphology",
+        "fertility_status",
+        "generation",
+        "litter_size",
+        "selection_pressure"
+      ],
+      "eligibility": "not-ready"
+    },
+    {
+      "hypothesis_id": "H-TREATMENT-MANIFOLD-001",
+      "title": "Fertility treatment response manifold",
+      "evidence_grade": "E0",
+      "available_variables": [],
+      "missing_variables": [
+        "age",
+        "embryo_metrics",
+        "fertility_diagnosis",
+        "gamete_metrics",
+        "hormone_values",
+        "implantation",
+        "live_birth",
+        "pregnancy",
+        "treatment_type"
+      ],
+      "eligibility": "not-ready"
+    }
+  ]
+}

@@ -32,6 +32,10 @@
 - Dashboard generator
 - CI validation suite
 - Package skeletons
+- Backend status export
+- Hypothesis eligibility report
+- Reproducible markdown report
+- CLI command surface for standards, eligibility, backend, and reports
 
 ## Milestone 4: Scientific Expansion
 

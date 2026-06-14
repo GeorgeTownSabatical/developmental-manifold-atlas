@@ -26,6 +26,8 @@ pip install -e ".[dev]"
 dmatlas validate
 dmatlas quality
 dmatlas standards
+dmatlas backend
+dmatlas eligibility
 dmatlas hypotheses
 dmatlas report
 pytest
@@ -45,6 +47,9 @@ Open `docs/index.html` to view the static portal after `dmatlas report` generate
 | `registry/equivalence_classes.json` | Phase 2 comparability grades for cross-species measurements |
 | `registry/derived_variables.json` | Phase 2 derived-variable formulas |
 | `registry/protocol_readiness.json` | Phase 2 protocol review status |
+| `dashboards/backend.json` | Phase 3 developer backend status |
+| `dashboards/hypothesis_eligibility.json` | Phase 3 hypothesis variable-readiness report |
+| `reports/atlas_backend_report.md` | Phase 3 reproducible backend report |
 | `hypotheses` | versioned scientific hypothesis records |
 | `measurements` | measurement standards and working group protocols |
 | `data` | synthetic and public demo datasets only |

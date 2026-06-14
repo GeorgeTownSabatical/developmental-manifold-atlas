@@ -19,6 +19,8 @@ jobs:
       - run: dmatlas analyze
       - run: dmatlas quality
       - run: dmatlas standards
+      - run: dmatlas backend
+      - run: dmatlas eligibility
       - run: dmatlas hypotheses
       - run: dmatlas report
       - run: pytest

@@ -23,14 +23,20 @@ function listObject(obj) {
     .join("")}</ul>`;
 }
 
-Promise.all([loadJson(dashboardPaths("summary.json")), loadJson(dashboardPaths("data_quality.json")), loadJson(dashboardPaths("standards.json"))])
-  .then(([summary, quality, standards]) => {
+Promise.all([
+  loadJson(dashboardPaths("summary.json")),
+  loadJson(dashboardPaths("data_quality.json")),
+  loadJson(dashboardPaths("standards.json")),
+  loadJson(dashboardPaths("backend.json")),
+  loadJson(dashboardPaths("hypothesis_eligibility.json")),
+])
+  .then(([summary, quality, standards, backend, eligibility]) => {
     document.querySelector("#summary").innerHTML = [
       metric("Datasets", summary.dataset_count),
       metric("Hypotheses", summary.hypothesis_count),
       metric("Organisms", summary.organism_count),
       metric("Measurements", summary.measurement_record_count),
-      metric("Protocols", standards.protocol_count),
+      metric("CLI Commands", backend.cli_command_count),
     ].join("");
     document.querySelector("#coverage").innerHTML = listObject(summary.species_counts);
     document.querySelector("#hypothesis-status").innerHTML = listObject(summary.evidence_grades || summary.hypothesis_status);
@@ -41,6 +47,18 @@ Promise.all([loadJson(dashboardPaths("summary.json")), loadJson(dashboardPaths("
       "Equivalence classes": standards.equivalence_class_count,
       "Derived variables": standards.derived_variable_count,
     });
+    document.querySelector("#backend-status").innerHTML = listObject({
+      Commands: backend.cli_command_count,
+      Workflows: backend.workflow_count,
+      Packages: Object.keys(backend.package_surface || {}).length,
+      Status: backend.backend_status,
+    });
+    document.querySelector("#eligibility-status").innerHTML = listObject(
+      (eligibility.records || []).reduce((acc, record) => {
+        acc[record.eligibility] = (acc[record.eligibility] || 0) + 1;
+        return acc;
+      }, {})
+    );
   })
   .catch((error) => {
     document.querySelector("#summary").innerHTML = `<article class="metric"><span>Dashboard</span><strong>Offline</strong></article>`;
