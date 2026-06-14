@@ -25,6 +25,7 @@ python3 -m venv .venv
 pip install -e ".[dev]"
 dmatlas validate
 dmatlas quality
+dmatlas standards
 dmatlas hypotheses
 dmatlas report
 pytest
@@ -40,6 +41,10 @@ Open `docs/index.html` to view the static portal after `dmatlas report` generate
 | `schemas` | JSON schemas for registry and data submissions |
 | `registry` | datasets, institutions, contributors, instruments |
 | `registry/trait_vocabulary.json` | standardized AGD, craniofacial, neonatal, fertility, genetics, exposure, and derived traits |
+| `registry/landmarks.json` | Phase 2 landmark definitions |
+| `registry/equivalence_classes.json` | Phase 2 comparability grades for cross-species measurements |
+| `registry/derived_variables.json` | Phase 2 derived-variable formulas |
+| `registry/protocol_readiness.json` | Phase 2 protocol review status |
 | `hypotheses` | versioned scientific hypothesis records |
 | `measurements` | measurement standards and working group protocols |
 | `data` | synthetic and public demo datasets only |

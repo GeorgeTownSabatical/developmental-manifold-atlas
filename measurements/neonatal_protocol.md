@@ -1,4 +1,4 @@
-# Neonatal Measurement Protocol v0.1
+# Neonatal Measurement Protocol v0.2
 
 ## Core Measures
 
@@ -14,3 +14,15 @@
 
 Only aggregate, synthetic, or controlled-access metadata belongs in the public repository.
 
+## Required Context
+
+- gestational age
+- timing after birth
+- birth context
+- sex
+- clinical measurement source
+- ethics status
+- access tier
+- aggregation level
+
+AGD in neonates must be performed only under approved clinical or research protocols. Public dashboards should use synthetic examples, metadata-only pointers, or aggregate summaries.

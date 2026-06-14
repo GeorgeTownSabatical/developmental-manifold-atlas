@@ -1,0 +1,20 @@
+{
+  "phase": "Phase 2",
+  "focus": "Measurement standardization",
+  "landmark_count": 6,
+  "equivalence_class_count": 5,
+  "derived_variable_count": 5,
+  "protocol_count": 5,
+  "protocol_status": {
+    "review-ready": 2,
+    "needs-expert-review": 2,
+    "draft": 1
+  },
+  "protocol_domains": {
+    "agd": 1,
+    "craniofacial": 1,
+    "neonatal": 1,
+    "fertility": 1,
+    "breeding": 1
+  }
+}

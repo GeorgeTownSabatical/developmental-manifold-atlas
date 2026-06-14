@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Derived variable definitions",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["derived_id", "name", "domain", "formula", "required_inputs", "interpretation", "preserve_raw_values"],
+    "properties": {
+      "derived_id": { "type": "string", "pattern": "^DRV-[A-Z0-9-]+$" },
+      "name": { "type": "string" },
+      "domain": { "enum": ["agd", "craniofacial", "neonatal", "fertility", "quality"] },
+      "formula": { "type": "string" },
+      "required_inputs": { "type": "array", "items": { "type": "string" } },
+      "interpretation": { "type": "string" },
+      "preserve_raw_values": { "type": "boolean" }
+    }
+  }
+}
+

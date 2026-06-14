@@ -1,4 +1,4 @@
-# Fertility Measurement Protocol v0.1
+# Fertility Measurement Protocol v0.2
 
 ## Male Measures
 
@@ -27,3 +27,16 @@
 
 Public records must be aggregate, synthetic, or metadata-only unless explicitly approved for open release.
 
+## Reporting Boundaries
+
+Distinguish clinical infertility diagnosis, fertility markers, treatment outcomes, reproductive history, and self-reported fertility status. The schema should never force disclosure of unnecessary personal detail.
+
+## Minimum Public Metadata
+
+- data level
+- access tier
+- aggregation level
+- assay or clinical method
+- ethics status
+- source/citation
+- limitations

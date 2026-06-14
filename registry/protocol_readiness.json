@@ -1,0 +1,48 @@
+[
+  {
+    "protocol_id": "PROTO-AGD-001",
+    "domain": "agd",
+    "title": "AGD measurement protocol",
+    "document": "measurements/agd_protocol.md",
+    "status": "review-ready",
+    "minimum_fields": ["species", "sex", "developmental_stage", "landmark_start", "landmark_end", "method", "instrument_id", "observer_id", "quality_flag"],
+    "next_review": "expert landmark review"
+  },
+  {
+    "protocol_id": "PROTO-FACE-001",
+    "domain": "craniofacial",
+    "title": "Craniofacial measurement protocol",
+    "document": "measurements/craniofacial_protocol.md",
+    "status": "review-ready",
+    "minimum_fields": ["species", "age_stage", "imaging_or_caliper_method", "scale_marker", "landmark_set", "observer_id", "repeatability_score"],
+    "next_review": "comparative morphometrics review"
+  },
+  {
+    "protocol_id": "PROTO-NEO-001",
+    "domain": "neonatal",
+    "title": "Neonatal measurement protocol",
+    "document": "measurements/neonatal_protocol.md",
+    "status": "needs-expert-review",
+    "minimum_fields": ["gestational_age", "birth_context", "timing_after_birth", "ethics_status", "access_tier", "aggregate_or_synthetic_indicator"],
+    "next_review": "neonatal ethics and clinical workflow review"
+  },
+  {
+    "protocol_id": "PROTO-FERT-001",
+    "domain": "fertility",
+    "title": "Fertility measurement protocol",
+    "document": "measurements/fertility_protocol.md",
+    "status": "needs-expert-review",
+    "minimum_fields": ["data_level", "access_tier", "diagnosis_or_marker_type", "assay_or_clinical_method", "ethics_status", "aggregation_level"],
+    "next_review": "reproductive endocrinology and privacy review"
+  },
+  {
+    "protocol_id": "PROTO-BREED-001",
+    "domain": "breeding",
+    "title": "Animal breeding and generational protocol",
+    "document": "measurements/breeding_protocol.md",
+    "status": "draft",
+    "minimum_fields": ["generation_id", "lineage_id", "selection_pressure", "breed_strain", "breeding_method", "litter_size", "survival_rate"],
+    "next_review": "veterinary and comparative biology review"
+  }
+]
+

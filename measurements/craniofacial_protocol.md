@@ -1,4 +1,4 @@
-# Craniofacial Measurement Protocol v0.1
+# Craniofacial Measurement Protocol v0.2
 
 ## Core Measures
 
@@ -19,3 +19,16 @@
 - `skull_width / skull_length`
 - `facial_width / upper_facial_height`
 
+## Image-Based Metadata
+
+- camera or scanner model
+- scale marker
+- angle or view
+- lighting
+- landmark set
+- software used
+- observer
+- repeatability score
+- equivalence class for species-specific landmarks
+
+Human fWHR is not directly equivalent to dog muzzle width. Comparative analyses must state whether landmarks are direct, biologically comparable, alternate, proxy, or unusable.

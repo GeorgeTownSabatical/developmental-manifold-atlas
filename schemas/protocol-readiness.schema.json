@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Protocol readiness registry",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["protocol_id", "domain", "title", "document", "status", "minimum_fields", "next_review"],
+    "properties": {
+      "protocol_id": { "type": "string", "pattern": "^PROTO-[A-Z0-9-]+$" },
+      "domain": { "enum": ["agd", "craniofacial", "neonatal", "fertility", "breeding"] },
+      "title": { "type": "string" },
+      "document": { "type": "string" },
+      "status": { "enum": ["draft", "review-ready", "adopted", "needs-expert-review"] },
+      "minimum_fields": { "type": "array", "items": { "type": "string" } },
+      "next_review": { "type": "string" }
+    }
+  }
+}
+

@@ -18,6 +18,7 @@ jobs:
       - run: dmatlas normalize
       - run: dmatlas analyze
       - run: dmatlas quality
+      - run: dmatlas standards
       - run: dmatlas hypotheses
       - run: dmatlas report
       - run: pytest

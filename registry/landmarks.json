@@ -1,0 +1,57 @@
+[
+  {
+    "landmark_id": "LMK-AGD-ANAL-VERGE",
+    "domain": "agd",
+    "name": "Anal verge",
+    "definition": "External anal opening used as the start landmark for AGD measures.",
+    "species_scope": "mammal-general with protocol-specific positioning",
+    "confidence_default": "A",
+    "notes": "Must be paired with subject position and handling conditions."
+  },
+  {
+    "landmark_id": "LMK-AGD-POST-SCROTAL-BASE",
+    "domain": "agd",
+    "name": "Posterior scrotal base",
+    "definition": "Posterior junction of scrotal tissue and perineal skin.",
+    "species_scope": "male mammals with species-specific adaptation",
+    "confidence_default": "A",
+    "notes": "Primary endpoint for AGD_AS."
+  },
+  {
+    "landmark_id": "LMK-AGD-CLITORIS",
+    "domain": "agd",
+    "name": "Clitoris",
+    "definition": "External clitoral landmark used as endpoint for AGD_AC.",
+    "species_scope": "female mammals with species-specific adaptation",
+    "confidence_default": "A",
+    "notes": "Requires privacy and ethics review for human neonatal or clinical contexts."
+  },
+  {
+    "landmark_id": "LMK-FACE-NASION-EQUIV",
+    "domain": "craniofacial",
+    "name": "Nasion or species-equivalent",
+    "definition": "Midline craniofacial reference point or documented species-equivalent.",
+    "species_scope": "human and mammal-comparative",
+    "confidence_default": "B",
+    "notes": "Equivalence class must be stated for non-human comparisons."
+  },
+  {
+    "landmark_id": "LMK-FACE-ROSTRAL-TIP",
+    "domain": "craniofacial",
+    "name": "Rostral tip",
+    "definition": "Anterior-most snout or face landmark used for snout length.",
+    "species_scope": "mammal-comparative",
+    "confidence_default": "B",
+    "notes": "Photographic measures require scale marker and angle metadata."
+  },
+  {
+    "landmark_id": "LMK-NEO-OFC",
+    "domain": "neonatal",
+    "name": "Occipitofrontal circumference path",
+    "definition": "Head circumference path passing over occipital and frontal reference points.",
+    "species_scope": "human neonatal aggregate or controlled protocol",
+    "confidence_default": "A",
+    "notes": "Public repository accepts aggregate or synthetic values only."
+  }
+]
+

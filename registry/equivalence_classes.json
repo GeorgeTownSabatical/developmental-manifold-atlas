@@ -1,0 +1,43 @@
+[
+  {
+    "equivalence_id": "EQ-DIRECT-STANDARD",
+    "grade": "A",
+    "name": "Direct standard landmark",
+    "definition": "Same landmark definition and measurement posture as the protocol standard.",
+    "analysis_use": "eligible for primary analysis",
+    "filter_rule": "include by default"
+  },
+  {
+    "equivalence_id": "EQ-BIO-COMPARABLE",
+    "grade": "B",
+    "name": "Biologically comparable landmark",
+    "definition": "Landmark is not identical but maps to a documented species-equivalent structure.",
+    "analysis_use": "eligible with equivalence sensitivity analysis",
+    "filter_rule": "include in primary analysis only if pre-specified"
+  },
+  {
+    "equivalence_id": "EQ-ALTERNATE-LANDMARK",
+    "grade": "C",
+    "name": "Comparable alternate landmark",
+    "definition": "Alternate endpoint likely captures the same developmental axis but is not protocol-standard.",
+    "analysis_use": "secondary or sensitivity analysis",
+    "filter_rule": "exclude from strict landmark analysis"
+  },
+  {
+    "equivalence_id": "EQ-PROXY",
+    "grade": "D",
+    "name": "Approximate proxy",
+    "definition": "Proxy, literature-derived, or inferred measurement with limited comparability.",
+    "analysis_use": "exploratory analysis only",
+    "filter_rule": "exclude from confirmatory analysis"
+  },
+  {
+    "equivalence_id": "EQ-UNUSABLE",
+    "grade": "F",
+    "name": "Unusable or ambiguous",
+    "definition": "Landmark or method is too ambiguous for scientific comparison.",
+    "analysis_use": "registry metadata only",
+    "filter_rule": "exclude from analysis"
+  }
+]
+

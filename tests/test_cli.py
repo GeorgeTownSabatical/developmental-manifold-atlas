@@ -26,3 +26,9 @@ def test_quality_writes_data_quality_output():
     assert main(["quality"]) == 0
     quality = ROOT / "dashboards" / "data_quality.json"
     assert quality.exists()
+
+
+def test_standards_writes_standards_output():
+    assert main(["standards"]) == 0
+    standards = ROOT / "dashboards" / "standards.json"
+    assert standards.exists()

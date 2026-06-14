@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Measurement equivalence classes",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["equivalence_id", "grade", "name", "definition", "analysis_use", "filter_rule"],
+    "properties": {
+      "equivalence_id": { "type": "string", "pattern": "^EQ-[A-Z0-9-]+$" },
+      "grade": { "enum": ["A", "B", "C", "D", "F"] },
+      "name": { "type": "string" },
+      "definition": { "type": "string" },
+      "analysis_use": { "type": "string" },
+      "filter_rule": { "type": "string" }
+    }
+  }
+}
+

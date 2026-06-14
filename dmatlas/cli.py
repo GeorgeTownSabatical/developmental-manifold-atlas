@@ -19,6 +19,10 @@ REGISTRY_FILES = {
     "demo_records": ("data/demo/developmental_state_objects.json", "schemas/developmental-state-object.schema.json"),
     "organisms": ("data/demo/organisms.json", "schemas/organism.schema.json"),
     "measurements": ("data/demo/measurements.json", "schemas/measurement.schema.json"),
+    "landmarks": ("registry/landmarks.json", "schemas/landmark.schema.json"),
+    "equivalence_classes": ("registry/equivalence_classes.json", "schemas/equivalence-class.schema.json"),
+    "derived_variables": ("registry/derived_variables.json", "schemas/derived-variable.schema.json"),
+    "protocol_readiness": ("registry/protocol_readiness.json", "schemas/protocol-readiness.schema.json"),
 }
 
 
@@ -314,6 +318,35 @@ def quality_command(_: argparse.Namespace) -> int:
     return 0
 
 
+def standards_command(_: argparse.Namespace) -> int:
+    landmarks = load_json(ROOT / "registry/landmarks.json")
+    equivalence = load_json(ROOT / "registry/equivalence_classes.json")
+    derived = load_json(ROOT / "registry/derived_variables.json")
+    readiness = load_json(ROOT / "registry/protocol_readiness.json")
+
+    readiness_counts: dict[str, int] = {}
+    domains: dict[str, int] = {}
+    for item in readiness:
+        readiness_counts[item["status"]] = readiness_counts.get(item["status"], 0) + 1
+        domains[item["domain"]] = domains.get(item["domain"], 0) + 1
+
+    payload = {
+        "phase": "Phase 2",
+        "focus": "Measurement standardization",
+        "landmark_count": len(landmarks),
+        "equivalence_class_count": len(equivalence),
+        "derived_variable_count": len(derived),
+        "protocol_count": len(readiness),
+        "protocol_status": readiness_counts,
+        "protocol_domains": domains,
+    }
+    out = ROOT / "dashboards/standards.json"
+    out.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+    for key, value in payload.items():
+        print(f"{key}: {value}")
+    return 0
+
+
 def report_command(_: argparse.Namespace) -> int:
     datasets = load_json(ROOT / "registry/datasets.json")
     hypotheses = load_json(ROOT / "hypotheses/hypotheses.json")
@@ -411,6 +444,7 @@ def build_parser() -> argparse.ArgumentParser:
     sub.add_parser("normalize", help="compute demo normalized measures").set_defaults(func=normalize_command)
     sub.add_parser("report", help="generate dashboard-ready summary JSON").set_defaults(func=report_command)
     sub.add_parser("quality", help="generate data-quality dashboard JSON").set_defaults(func=quality_command)
+    sub.add_parser("standards", help="generate measurement-standardization dashboard JSON").set_defaults(func=standards_command)
     sub.add_parser("analyze", help="run pilot AGD-craniofacial analysis").set_defaults(func=analyze_command)
     sub.add_parser("cite", help="print dataset citation records").set_defaults(func=cite_command)
     sub.add_parser("hypotheses", help="list registered hypotheses and evidence grades").set_defaults(func=hypotheses_command)

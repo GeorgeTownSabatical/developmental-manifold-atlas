@@ -1,0 +1,48 @@
+[
+  {
+    "derived_id": "DRV-AGD-MASS-CUBEROOT",
+    "name": "AGD normalized by body mass cube root",
+    "domain": "agd",
+    "formula": "AGD / body_mass^(1/3)",
+    "required_inputs": ["AGD", "body_mass"],
+    "interpretation": "Size-adjusted AGD index for first-pass cross-body-size comparison.",
+    "preserve_raw_values": true
+  },
+  {
+    "derived_id": "DRV-AGD-LENGTH",
+    "name": "AGD normalized by body length",
+    "domain": "agd",
+    "formula": "AGD / body_length",
+    "required_inputs": ["AGD", "body_length"],
+    "interpretation": "Linear proportional AGD index for within-species or within-stage comparison.",
+    "preserve_raw_values": true
+  },
+  {
+    "derived_id": "DRV-AGD-RESIDUAL",
+    "name": "AGD residual",
+    "domain": "agd",
+    "formula": "observed_AGD - expected_AGD(body_size, sex, age, species)",
+    "required_inputs": ["AGD", "body_size", "sex", "age", "species"],
+    "interpretation": "Deviation from expected allometric AGD; often the scientific signal.",
+    "preserve_raw_values": true
+  },
+  {
+    "derived_id": "DRV-SNOUT-SKULL-RATIO",
+    "name": "Snout-skull ratio",
+    "domain": "craniofacial",
+    "formula": "snout_length / skull_length",
+    "required_inputs": ["snout_length", "skull_length"],
+    "interpretation": "Craniofacial proportionality measure for comparative geometry.",
+    "preserve_raw_values": true
+  },
+  {
+    "derived_id": "DRV-QUALITY-SCORE",
+    "name": "Measurement confidence score",
+    "domain": "quality",
+    "formula": "weighted score from quality_flag, equivalence_class, uncertainty, protocol completeness",
+    "required_inputs": ["quality_flag", "equivalence_class", "uncertainty", "protocol_metadata"],
+    "interpretation": "Transparent weight for sensitivity and dashboard display.",
+    "preserve_raw_values": true
+  }
+]
+

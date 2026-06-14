@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Landmark registry",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["landmark_id", "domain", "name", "definition", "species_scope", "confidence_default", "notes"],
+    "properties": {
+      "landmark_id": { "type": "string", "pattern": "^LMK-[A-Z0-9-]+$" },
+      "domain": { "enum": ["agd", "craniofacial", "neonatal", "fertility", "breeding"] },
+      "name": { "type": "string" },
+      "definition": { "type": "string" },
+      "species_scope": { "type": "string" },
+      "confidence_default": { "enum": ["A", "B", "C", "D", "F"] },
+      "notes": { "type": "string" }
+    }
+  }
+}
+

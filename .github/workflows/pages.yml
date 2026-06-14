@@ -24,6 +24,7 @@ jobs:
           python-version: "3.11"
       - run: pip install -e ".[dev]"
       - run: dmatlas quality
+      - run: dmatlas standards
       - run: dmatlas report
       - run: mkdir -p site && cp -R docs/. site/ && mkdir -p site/dashboards && cp dashboards/*.json site/dashboards/
       - uses: actions/configure-pages@v5

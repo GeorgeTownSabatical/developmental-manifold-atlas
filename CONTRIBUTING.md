@@ -14,6 +14,17 @@
 
 No naked measurements: a value without context, unit, landmark, provenance, quality, and access tier is not ready for the atlas.
 
+## Phase 2 Measurement Standardization
+
+Before a dataset can move beyond metadata-only status, contributors should map measurements to:
+
+- `registry/landmarks.json`
+- `registry/equivalence_classes.json`
+- `registry/derived_variables.json`
+- `registry/protocol_readiness.json`
+
+Use `examples/phase_two_standardization_checklist.md` before opening a pull request.
+
 ## Hypothesis Contributions
 
 Add a structured hypothesis to `hypotheses/hypotheses.json` with required variables, correction factors, primary test, eligible datasets, replication threshold, status, and confidence.

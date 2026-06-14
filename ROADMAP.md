@@ -13,11 +13,15 @@
 
 ## Milestone 2: Measurement Standards
 
-- AGD measurement protocol
-- Craniofacial measurement protocol
-- Neonatal measurement protocol
-- Fertility measurement protocol
-- Species metadata schema
+- AGD measurement protocol v0.2
+- Craniofacial measurement protocol v0.2
+- Neonatal measurement protocol v0.2
+- Fertility measurement protocol v0.2
+- Animal breeding and generational protocol v0.1
+- Landmark registry
+- Measurement equivalence classes
+- Derived-variable definitions
+- Protocol readiness dashboard
 - Landmark confidence scoring
 
 ## Milestone 3: Developer Backend
@@ -46,4 +50,3 @@
 - Public funding dashboard
 - First white paper
 - First preprint
-
