@@ -1,0 +1,23 @@
+{
+  "measurement_count": 4,
+  "organism_count": 3,
+  "quality_grades": {
+    "A": 2,
+    "B": 1,
+    "C": 1
+  },
+  "trait_coverage": {
+    "AGD_AS": 1,
+    "SNOUT_SKULL_RATIO": 1,
+    "AGD_AC": 1,
+    "HEAD_CIRCUMFERENCE": 1
+  },
+  "missingness": {},
+  "access_tiers": {
+    "tier_0_synthetic": 4
+  },
+  "developmental_stages": {
+    "adult": 3,
+    "neonate": 1
+  }
+}

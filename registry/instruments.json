@@ -1,0 +1,12 @@
+[
+  {
+    "instrument_id": "INSTMT-CALIPER-DEMO-001",
+    "type": "caliper",
+    "manufacturer": "generic synthetic instrument",
+    "precision": "0.1 mm nominal",
+    "calibration": "synthetic demo only",
+    "protocol": "measurements/agd_protocol.md",
+    "limitations": "Not a real device record; intended for schema and dashboard testing."
+  }
+]
+

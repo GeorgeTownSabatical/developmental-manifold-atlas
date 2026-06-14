@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Universal measurement records",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "measurement_id",
+      "organism_id",
+      "dataset_id",
+      "trait_id",
+      "value",
+      "unit",
+      "landmark_start",
+      "landmark_end",
+      "method",
+      "instrument_id",
+      "observer_id",
+      "date_or_stage",
+      "uncertainty",
+      "quality_flag",
+      "source",
+      "access_tier",
+      "provenance",
+      "notes"
+    ],
+    "properties": {
+      "measurement_id": { "type": "string", "pattern": "^MEAS-[A-Z0-9-]+$" },
+      "organism_id": { "type": "string", "pattern": "^ORG-[A-Z0-9-]+$" },
+      "dataset_id": { "type": "string", "pattern": "^DS-[A-Z0-9-]+$" },
+      "trait_id": { "type": "string" },
+      "value": {
+        "oneOf": [
+          { "type": "number" },
+          { "enum": ["NA_NOT_MEASURED", "NA_NOT_REPORTED", "NA_NOT_APPLICABLE", "NA_RESTRICTED", "NA_UNKNOWN"] }
+        ]
+      },
+      "unit": { "type": "string", "minLength": 1 },
+      "landmark_start": { "type": "string", "minLength": 1 },
+      "landmark_end": { "type": "string", "minLength": 1 },
+      "method": { "enum": ["caliper", "ultrasound", "ct", "mri", "manual", "automated", "photo", "3d_scan", "xray", "assay", "clinical_record", "aggregate_report"] },
+      "instrument_id": { "type": "string" },
+      "observer_id": { "type": "string" },
+      "date_or_stage": { "type": "string" },
+      "uncertainty": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["type", "value", "unit"],
+        "properties": {
+          "type": { "enum": ["sd", "se", "ci95", "range", "repeatability_error", "not_reported", "not_applicable"] },
+          "value": { "type": ["number", "string"] },
+          "unit": { "type": "string" }
+        }
+      },
+      "quality_flag": { "enum": ["A", "B", "C", "D", "F"] },
+      "source": { "type": "string" },
+      "access_tier": { "enum": ["tier_0_synthetic", "tier_1_public_animal", "tier_2_public_aggregate_human", "tier_3_restricted_deidentified_human", "tier_4_controlled_clinical_genetic_neonatal", "tier_5_metadata_only"] },
+      "provenance": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["source_paper", "dataset_version", "extraction_method", "extractor", "date_extracted", "original_unit", "transformation_applied", "confidence_level"],
+        "properties": {
+          "source_paper": { "type": "string" },
+          "dataset_version": { "type": "string" },
+          "extraction_method": { "type": "string" },
+          "extractor": { "type": "string" },
+          "date_extracted": { "type": "string" },
+          "original_unit": { "type": "string" },
+          "transformation_applied": { "type": "string" },
+          "confidence_level": { "enum": ["low", "medium", "high"] }
+        }
+      },
+      "notes": { "type": "string" }
+    }
+  }
+}
+

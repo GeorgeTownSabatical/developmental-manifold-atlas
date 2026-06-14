@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Hypothesis registry",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["hypothesis_id", "class", "title", "claim", "formal_statement", "species", "required_variables", "correction_factors", "expected_direction", "primary_test", "secondary_tests", "eligible_datasets", "replication_threshold", "evidence_grade", "status", "confidence", "linked_papers"],
+    "properties": {
+      "hypothesis_id": { "type": "string", "pattern": "^H-[A-Z0-9-]+$" },
+      "class": { "type": "string" },
+      "title": { "type": "string" },
+      "claim": { "type": "string" },
+      "formal_statement": { "type": "string" },
+      "species": { "type": "array", "items": { "type": "string" } },
+      "required_variables": { "type": "array", "items": { "type": "string" } },
+      "correction_factors": { "type": "array", "items": { "type": "string" } },
+      "expected_direction": { "type": "string" },
+      "primary_test": { "type": "string" },
+      "secondary_tests": { "type": "array", "items": { "type": "string" } },
+      "eligible_datasets": { "type": "array", "items": { "type": "string" } },
+      "replication_threshold": { "type": "string" },
+      "evidence_grade": { "enum": ["E0", "E1", "E2", "E3", "E4", "E5", "C"] },
+      "status": { "enum": ["proposed", "specified", "testable", "tested", "replicated", "contradicted", "retired", "superseded"] },
+      "confidence": { "enum": ["low", "medium", "high"] },
+      "linked_papers": { "type": "array", "items": { "type": "string" } }
+    }
+  }
+}

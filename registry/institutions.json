@@ -1,0 +1,15 @@
+[
+  {
+    "institution_id": "INST-DMA-OPEN-001",
+    "name": "Developmental Manifold Open Consortium",
+    "type": "consortium",
+    "country": "international",
+    "website": "https://developmental-manifold.example",
+    "contact": "maintainers@developmental-manifold.example",
+    "datasets": ["DS-SYNTH-PILOT-001"],
+    "working_groups": ["WG-AGD", "WG-FACE", "WG-FERT", "WG-NEO", "WG-GEN", "WG-STAT", "WG-COMP", "WG-ETHICS"],
+    "ethics_contact": "ethics@developmental-manifold.example",
+    "status": "active"
+  }
+]
+

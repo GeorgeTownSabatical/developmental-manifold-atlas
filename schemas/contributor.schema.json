@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Contributor registry",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["contributor_id", "name", "orcid", "github", "affiliation", "role", "contributions", "conflict_disclosures"],
+    "properties": {
+      "contributor_id": { "type": "string", "pattern": "^CONTRIB-[A-Z0-9-]+$" },
+      "name": { "type": "string" },
+      "orcid": { "type": "string" },
+      "github": { "type": "string" },
+      "affiliation": { "type": "string" },
+      "role": { "type": "string" },
+      "contributions": { "type": "array", "items": { "type": "string" } },
+      "conflict_disclosures": { "type": "string" }
+    }
+  }
+}
+

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Institution registry",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["institution_id", "name", "type", "country", "website", "contact", "datasets", "working_groups", "ethics_contact", "status"],
+    "properties": {
+      "institution_id": { "type": "string", "pattern": "^INST-[A-Z0-9-]+$" },
+      "name": { "type": "string" },
+      "type": { "enum": ["university", "hospital", "clinic", "lab", "biobank", "government", "consortium", "other"] },
+      "country": { "type": "string" },
+      "website": { "type": "string" },
+      "contact": { "type": "string" },
+      "datasets": { "type": "array", "items": { "type": "string" } },
+      "working_groups": { "type": "array", "items": { "type": "string" } },
+      "ethics_contact": { "type": "string" },
+      "status": { "enum": ["active", "pending", "historical"] }
+    }
+  }
+}
+

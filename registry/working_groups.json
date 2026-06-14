@@ -1,0 +1,43 @@
+[
+  {
+    "working_group_id": "WG-AGD",
+    "name": "AGD Standards Group",
+    "focus": "measurement landmarks and reproducibility"
+  },
+  {
+    "working_group_id": "WG-FACE",
+    "name": "Craniofacial Geometry Group",
+    "focus": "skull, face, mandible, and imaging metrics"
+  },
+  {
+    "working_group_id": "WG-FERT",
+    "name": "Fertility Outcomes Group",
+    "focus": "semen, ovarian reserve, IVF, pregnancy, and reproductive outcomes"
+  },
+  {
+    "working_group_id": "WG-NEO",
+    "name": "Neonatal Trajectory Group",
+    "focus": "birth cohort, NICU, and neonatal morphology metrics"
+  },
+  {
+    "working_group_id": "WG-GEN",
+    "name": "Genetics Group",
+    "focus": "heritability, GWAS, family history, and developmental pathways"
+  },
+  {
+    "working_group_id": "WG-STAT",
+    "name": "Statistical Methods Group",
+    "focus": "causal inference, phylogenetics, allometry, and manifold modeling"
+  },
+  {
+    "working_group_id": "WG-COMP",
+    "name": "Software Group",
+    "focus": "CLI, schemas, packages, CI, dashboards, and APIs"
+  },
+  {
+    "working_group_id": "WG-ETHICS",
+    "name": "Ethics Group",
+    "focus": "privacy, consent, sensitive human data, and governance"
+  }
+]
+

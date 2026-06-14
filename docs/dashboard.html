@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Atlas Dashboard</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="dashboard.html" aria-current="page">Dashboard</a>
+        <a href="data-standards.html">Data Standards</a>
+        <a href="modeling.html">Modeling</a>
+        <a href="launch.html">Launch</a>
+        <a href="hypotheses.html">Hypothesis Lab</a>
+        <a href="developer.html">Developer Portal</a>
+        <a href="governance.html">Governance</a>
+      </nav>
+    </header>
+    <main class="app-shell">
+      <section class="app-hero">
+        <article class="mission-panel">
+          <p class="kicker">Developmental Manifold Atlas / v0.1.0-alpha</p>
+          <h1>Research Operations Dashboard</h1>
+          <p>
+            A publication-grade control surface for tracking public-safe data readiness, hypothesis evidence,
+            measurement quality, modeling maturity, and consortium launch progress.
+          </p>
+          <div class="toolbar">
+            <span class="tag">NIH-inspired blue, gray, white, and gold UI</span>
+            <span class="tag">Static GitHub Pages, generated from repository JSON</span>
+          </div>
+        </article>
+        <aside class="readiness-panel">
+          <h2>Atlas Seed Readiness</h2>
+          <p>Prototype status for a forkable scientific infrastructure release.</p>
+          <div class="readiness-list">
+            <div class="readiness-row"><span>Schema grammar</span><strong>Live</strong></div>
+            <div class="readiness-row"><span>Ethics-by-schema</span><strong>Enforced</strong></div>
+            <div class="readiness-row"><span>Hypothesis engine</span><strong>Scaffolded</strong></div>
+            <div class="readiness-row"><span>Publication lane</span><strong>Drafting</strong></div>
+          </div>
+        </aside>
+      </section>
+
+      <section>
+        <div class="toolbar">
+          <div>
+            <p class="kicker">Live Registry Summary</p>
+            <h2>Current Atlas State</h2>
+          </div>
+          <span class="status-pill">Synthetic/public-safe pilot</span>
+        </div>
+        <div id="summary" class="metrics"></div>
+      </section>
+
+      <section class="app-grid">
+        <article class="app-card span-4">
+          <header>
+            <div>
+              <p class="kicker">Coverage</p>
+              <h2>Species and Data Pools</h2>
+            </div>
+            <span class="tag">Atlas map</span>
+          </header>
+          <div id="coverage"></div>
+        </article>
+
+        <article class="app-card span-4">
+          <header>
+            <div>
+              <p class="kicker">Hypotheses</p>
+              <h2>Evidence Status</h2>
+            </div>
+            <span class="tag">Pre-registered</span>
+          </header>
+          <div id="hypothesis-status"></div>
+        </article>
+
+        <article class="app-card span-4">
+          <header>
+            <div>
+              <p class="kicker">Measurement QA</p>
+              <h2>Quality Grades</h2>
+            </div>
+            <span class="tag">A/B/C/D/F</span>
+          </header>
+          <div id="quality-grades"></div>
+        </article>
+
+        <article class="app-card span-8">
+          <header>
+            <div>
+              <p class="kicker">Inference Engine</p>
+              <h2>Hypothesis Test Lifecycle</h2>
+            </div>
+            <span class="tag">Correction before claim</span>
+          </header>
+          <div class="pipeline">
+            <div><strong>1. Specify</strong><br />claim, variables, inclusion rules</div>
+            <div><strong>2. Correct</strong><br />body size, sex, age, quality, phylogeny</div>
+            <div><strong>3. Test</strong><br />baseline, null, and residual models</div>
+            <div><strong>4. Stress</strong><br />sensitivity and replication checks</div>
+            <div><strong>5. Publish</strong><br />evidence grade and reproducible report</div>
+          </div>
+        </article>
+
+        <article class="app-card span-4">
+          <header>
+            <div>
+              <p class="kicker">Publication</p>
+              <h2>Release Lane</h2>
+            </div>
+            <span class="status-pill">Atlas Seed</span>
+          </header>
+          <ul class="data-list">
+            <li><span>Framework white paper</span><strong>Outline</strong></li>
+            <li><span>Pilot analysis report</span><strong>Generated</strong></li>
+            <li><span>Measurement standard</span><strong>Draft</strong></li>
+            <li><span>Ethics language</span><strong>Active</strong></li>
+          </ul>
+        </article>
+
+        <article class="app-card span-12">
+          <header>
+            <div>
+              <p class="kicker">Evidence Ladder</p>
+              <h2>Scientific Claim Maturity</h2>
+            </div>
+            <span class="tag">Avoid correlation factory failure</span>
+          </header>
+          <div class="evidence-ladder">
+            <div class="evidence-step active"><strong>E0</strong><br />Conceptual claim</div>
+            <div class="evidence-step active"><strong>E1</strong><br />Pilot signal</div>
+            <div class="evidence-step"><strong>E2</strong><br />Single-dataset support</div>
+            <div class="evidence-step"><strong>E3</strong><br />Multi-dataset support</div>
+            <div class="evidence-step"><strong>E4</strong><br />Independent replication</div>
+            <div class="evidence-step"><strong>E5</strong><br />Robust across corrections</div>
+          </div>
+        </article>
+
+        <article class="app-card span-6">
+          <header>
+            <div>
+              <p class="kicker">Model Readiness</p>
+              <h2>Methods Queue</h2>
+            </div>
+            <span class="tag">Exploratory vs confirmatory</span>
+          </header>
+          <ul class="data-list">
+            <li><span>Allometric normalization</span><strong>v0.1</strong></li>
+            <li><span>Residual analysis</span><strong>queued</strong></li>
+            <li><span>Phylogenetic correction hooks</span><strong>planned</strong></li>
+            <li><span>Bayesian hierarchy</span><strong>planned</strong></li>
+            <li><span>Manifold/TDA exploration</span><strong>planned</strong></li>
+          </ul>
+        </article>
+
+        <article class="app-card span-6">
+          <header>
+            <div>
+              <p class="kicker">Launch Roadmap</p>
+              <h2>Field Formation</h2>
+            </div>
+            <span class="tag">Consortium seed</span>
+          </header>
+          <div class="timeline">
+            <div class="timeline-item"><strong>Phase 1</strong><span>Minimum viable atlas</span><span class="status-pill">now</span></div>
+            <div class="timeline-item"><strong>Phase 2</strong><span>Measurement standardization</span><span>next</span></div>
+            <div class="timeline-item"><strong>Phase 3</strong><span>Developer backend maturity</span><span>next</span></div>
+            <div class="timeline-item"><strong>Phase 4</strong><span>Scientific consortium</span><span>planned</span></div>
+          </div>
+        </article>
+      </section>
+    </main>
+    <script src="assets/dashboard.js"></script>
+  </body>
+</html>

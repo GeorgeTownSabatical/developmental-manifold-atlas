@@ -1,0 +1,13 @@
+[
+  {
+    "contributor_id": "CONTRIB-PLACEHOLDER-001",
+    "name": "Open Maintainer Placeholder",
+    "orcid": "",
+    "github": "",
+    "affiliation": "Developmental Manifold Open Consortium",
+    "role": "maintainer",
+    "contributions": ["repository scaffold", "synthetic pilot dataset", "governance template"],
+    "conflict_disclosures": "none declared"
+  }
+]
+

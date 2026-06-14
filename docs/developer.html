@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Developer Portal</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="data-standards.html">Data Standards</a>
+        <a href="modeling.html">Modeling</a>
+        <a href="launch.html">Launch</a>
+        <a href="hypotheses.html">Hypothesis Lab</a>
+        <a href="developer.html" aria-current="page">Developer Portal</a>
+        <a href="governance.html">Governance</a>
+      </nav>
+    </header>
+    <main class="narrow">
+      <h1>Developer Portal</h1>
+      <section class="record">
+        <h2>Core Commands</h2>
+        <pre><code>pip install -e ".[dev]"
+dmatlas validate
+dmatlas normalize
+dmatlas analyze
+dmatlas quality
+dmatlas hypotheses
+dmatlas report
+pytest</code></pre>
+      </section>
+      <section class="record">
+        <h2>Contribution Flow</h2>
+        <ol>
+          <li>Register dataset metadata.</li>
+          <li>Validate schemas, units, landmarks, citations, license, privacy tier, and missingness.</li>
+          <li>Run analysis or dashboard generation.</li>
+          <li>Open a pull request with ethics and data-access answers complete.</li>
+        </ol>
+      </section>
+    </main>
+  </body>
+</html>

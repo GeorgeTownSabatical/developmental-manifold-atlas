@@ -1,0 +1,63 @@
+[
+  {
+    "dso_id": "DSO-SYNTH-001",
+    "dataset_id": "DS-SYNTH-PILOT-001",
+    "species": "Mus musculus",
+    "population": "synthetic lab strain",
+    "sex": "male",
+    "age": { "stage": "adult", "value": 90, "unit": "days" },
+    "measurements": { "agd_mm": 15.1, "body_mass_g": 28.4, "skull_length_mm": 23.2, "snout_length_mm": 8.1 },
+    "provenance": { "access_tier": "synthetic", "synthetic": true, "citation": "Developmental Manifold Atlas synthetic pilot dataset v0.1" }
+  },
+  {
+    "dso_id": "DSO-SYNTH-002",
+    "dataset_id": "DS-SYNTH-PILOT-001",
+    "species": "Mus musculus",
+    "population": "synthetic lab strain",
+    "sex": "female",
+    "age": { "stage": "adult", "value": 90, "unit": "days" },
+    "measurements": { "agd_mm": 8.4, "body_mass_g": 23.1, "skull_length_mm": 22.7, "snout_length_mm": 7.8 },
+    "provenance": { "access_tier": "synthetic", "synthetic": true, "citation": "Developmental Manifold Atlas synthetic pilot dataset v0.1" }
+  },
+  {
+    "dso_id": "DSO-SYNTH-003",
+    "dataset_id": "DS-SYNTH-PILOT-001",
+    "species": "Rattus norvegicus",
+    "population": "synthetic lab strain",
+    "sex": "male",
+    "age": { "stage": "adult", "value": 120, "unit": "days" },
+    "measurements": { "agd_mm": 31.3, "body_mass_g": 390.2, "skull_length_mm": 42.5, "snout_length_mm": 15.2 },
+    "provenance": { "access_tier": "synthetic", "synthetic": true, "citation": "Developmental Manifold Atlas synthetic pilot dataset v0.1" }
+  },
+  {
+    "dso_id": "DSO-SYNTH-004",
+    "dataset_id": "DS-SYNTH-PILOT-001",
+    "species": "Rattus norvegicus",
+    "population": "synthetic lab strain",
+    "sex": "female",
+    "age": { "stage": "adult", "value": 120, "unit": "days" },
+    "measurements": { "agd_mm": 19.2, "body_mass_g": 265.0, "skull_length_mm": 39.8, "snout_length_mm": 14.1 },
+    "provenance": { "access_tier": "synthetic", "synthetic": true, "citation": "Developmental Manifold Atlas synthetic pilot dataset v0.1" }
+  },
+  {
+    "dso_id": "DSO-SYNTH-005",
+    "dataset_id": "DS-SYNTH-PILOT-001",
+    "species": "Homo sapiens aggregate",
+    "population": "synthetic neonatal aggregate cell",
+    "sex": "male",
+    "age": { "stage": "neonate", "value": 39, "unit": "gestational_weeks" },
+    "measurements": { "agd_mm": 21.5, "body_mass_g": 3400.0, "head_circumference_mm": 350.0 },
+    "provenance": { "access_tier": "synthetic", "synthetic": true, "citation": "Developmental Manifold Atlas synthetic pilot dataset v0.1" }
+  },
+  {
+    "dso_id": "DSO-SYNTH-006",
+    "dataset_id": "DS-SYNTH-PILOT-001",
+    "species": "Homo sapiens aggregate",
+    "population": "synthetic neonatal aggregate cell",
+    "sex": "female",
+    "age": { "stage": "neonate", "value": 39, "unit": "gestational_weeks" },
+    "measurements": { "agd_mm": 16.7, "body_mass_g": 3250.0, "head_circumference_mm": 342.0 },
+    "provenance": { "access_tier": "synthetic", "synthetic": true, "citation": "Developmental Manifold Atlas synthetic pilot dataset v0.1" }
+  }
+]
+

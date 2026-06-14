@@ -1,0 +1,25 @@
+{
+  "analysis": "pilot_agd_craniofacial",
+  "rows": [
+    {
+      "dso_id": "DSO-SYNTH-001",
+      "agd_mm": 15.1,
+      "snout_skull_ratio": 0.349138
+    },
+    {
+      "dso_id": "DSO-SYNTH-002",
+      "agd_mm": 8.4,
+      "snout_skull_ratio": 0.343612
+    },
+    {
+      "dso_id": "DSO-SYNTH-003",
+      "agd_mm": 31.3,
+      "snout_skull_ratio": 0.357647
+    },
+    {
+      "dso_id": "DSO-SYNTH-004",
+      "agd_mm": 19.2,
+      "snout_skull_ratio": 0.354271
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "project": "Developmental Manifold Atlas",
+  "version": "0.1.0",
+  "dataset_count": 1,
+  "hypothesis_count": 5,
+  "demo_record_count": 6,
+  "organism_count": 3,
+  "measurement_record_count": 4,
+  "species_counts": {
+    "Mus musculus": 1,
+    "Rattus norvegicus": 1,
+    "Homo sapiens aggregate": 1
+  },
+  "measurement_counts": {
+    "agd_mm": 1,
+    "body_mass_g": 1,
+    "skull_length_mm": 1,
+    "snout_length_mm": 1,
+    "head_circumference_mm": 1
+  },
+  "access_tiers": {
+    "synthetic": 1
+  },
+  "hypothesis_status": {
+    "specified": 2,
+    "proposed": 3
+  },
+  "evidence_grades": {
+    "E0": 4,
+    "E1": 1
+  },
+  "quality_grades": {
+    "A": 2,
+    "B": 1,
+    "C": 1
+  }
+}

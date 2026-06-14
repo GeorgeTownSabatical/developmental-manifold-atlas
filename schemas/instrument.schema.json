@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Instrument registry",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["instrument_id", "type", "manufacturer", "precision", "calibration", "protocol", "limitations"],
+    "properties": {
+      "instrument_id": { "type": "string", "pattern": "^INSTMT-[A-Z0-9-]+$" },
+      "type": { "enum": ["caliper", "ultrasound", "ct", "mri", "3d-scan", "scale", "other"] },
+      "manufacturer": { "type": "string" },
+      "precision": { "type": "string" },
+      "calibration": { "type": "string" },
+      "protocol": { "type": "string" },
+      "limitations": { "type": "string" }
+    }
+  }
+}
+

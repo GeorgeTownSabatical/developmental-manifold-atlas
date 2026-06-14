@@ -1,0 +1,10 @@
+ssn
+social_security
+date_of_birth
+dob
+medical_record_number
+mrn
+patient_name
+address
+phone
+email

@@ -1,0 +1,26 @@
+[
+  {
+    "dataset_id": "DS-SYNTH-PILOT-001",
+    "title": "Synthetic pilot developmental state objects",
+    "version": "0.1.0",
+    "contributor": "Developmental Manifold Open Consortium",
+    "description": "Public-safe synthetic records for exercising AGD, craniofacial, neonatal, and allometric workflows.",
+    "species": ["Mus musculus", "Rattus norvegicus", "Homo sapiens aggregate"],
+    "population": "synthetic demonstration cohort",
+    "sex": "mixed",
+    "age_stage": "neonate to adult",
+    "measurements": ["agd_mm", "body_mass_g", "skull_length_mm", "snout_length_mm", "head_circumference_mm"],
+    "sample_size": 6,
+    "data_level": "synthetic",
+    "access_tier": "synthetic",
+    "license": "CC0-1.0",
+    "ethics_status": "not human subjects; synthetic demo data",
+    "institution_id": "INST-DMA-OPEN-001",
+    "contact": "maintainers@developmental-manifold.example",
+    "citation": "Developmental Manifold Atlas synthetic pilot dataset v0.1",
+    "provenance": "Generated as a public-safe synthetic fixture for repository validation and dashboard smoke tests.",
+    "limitations": "Synthetic values are not biologically meaningful and must not be used for scientific inference.",
+    "update_frequency": "static",
+    "quality_score": 72
+  }
+]
